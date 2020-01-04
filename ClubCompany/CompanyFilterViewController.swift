@@ -3,18 +3,22 @@
 //  ClubCompany
 //
 //  Created by Senthil Kumar J on 04/01/20.
-//  Copyright © 2020 Nagravision. All rights reserved.
+//  Copyright © 2020 Senthil Kumar J. All rights reserved.
 //
 
 import UIKit
 
 class CompanyFilterViewController: UIViewController {
 
+    //MARK:-Outlets
     @IBOutlet weak var sortTableView: UITableView!
+    
+    //MARK:-Variables
     var sortTypes: [String] = ["Default sort (Actual result)", "Ascending", "Descending"]
     var selectedSort: Int = 0
-    weak var sortDelegate: CompanyViewController?
+    weak var sortDelegate: SortDelegate?
     
+    //MARK:-View Delegates
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +36,7 @@ class CompanyFilterViewController: UIViewController {
     }
 }
 
+//MARK:- Extensions
 extension CompanyFilterViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sortTypes.count

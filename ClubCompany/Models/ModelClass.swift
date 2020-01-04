@@ -3,7 +3,7 @@
 //  ClubCompany
 //
 //  Created by Senthil Kumar J on 04/01/20.
-//  Copyright © 2020 Nagravision. All rights reserved.
+//  Copyright © 2020 Senthil Kumar J. All rights reserved.
 //
 
 import Foundation
@@ -28,8 +28,6 @@ public struct CompanyInfo: Codable {
     let logo: String?
     let about: String?
     let members: [Member]?
-    var isFavorite: Bool?
-    var isFollowed: Bool?
     
     private var _companyName: String?
     
@@ -40,8 +38,6 @@ public struct CompanyInfo: Codable {
         case logo
         case about
         case members
-        case isFavorite
-        case isFollowed
     }
 }
 

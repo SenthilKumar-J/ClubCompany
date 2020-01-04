@@ -3,13 +3,18 @@
 //  ClubCompany
 //
 //  Created by Senthil Kumar J on 04/01/20.
-//  Copyright © 2020 Nagravision. All rights reserved.
+//  Copyright © 2020 Senthil Kumar J. All rights reserved.
 //
 
 import UIKit
 
-protocol SortDelegate {
+protocol SortDelegate: AnyObject {
     func selectedSort(sortIndex: Int)
+}
+
+protocol CompanyInfoUpdateDelegate: AnyObject {
+    func didUpdateCompanyFavorite(isFavorite: Bool, companyId: String)
+    func didUpdateCompanyFollow(isFollow: Bool, companyId: String)
 }
 
 class CompanyViewController: UIViewController {
@@ -21,7 +26,6 @@ class CompanyViewController: UIViewController {
     var companyResponse: [CompanyInfo] = []
     let searchController = UISearchController(searchResultsController: nil)
     var filteredCompanySearch: [CompanyInfo] = []
-    var actualCompanyResponse: [CompanyInfo] = []
     var activityIndicator: UIActivityIndicatorView! = nil
     var sortedType: Int = 0
     var isSearchBarEmpty: Bool {
@@ -64,7 +68,6 @@ class CompanyViewController: UIViewController {
     
     func reloadAndShowTableView() {
         DispatchQueue.main.async {
-            self.companyResponse = self.actualCompanyResponse
             self.activityIndicator.stopAnimating()
             self.companyTableView.delegate = self
             self.companyTableView.dataSource = self
@@ -107,6 +110,7 @@ class CompanyViewController: UIViewController {
 
 }
 
+//MARK:- Extensions
 extension CompanyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isSearching {
@@ -123,23 +127,38 @@ extension CompanyViewController: UITableViewDelegate, UITableViewDataSource {
         cell.companyName.text = companyData.company
         cell.companyTotalMembers.text = "\(companyData.members?.count ?? 0) Members"
         cell.companyTotalMembers.textColor = .systemBlue
+        if DataManager.shared.isCompanyFavorite(companyId: companyData.id!) {
+            cell.favoriteImage.isHidden = false
+        } else {
+            cell.favoriteImage.isHidden = true
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let companyInfoVC: CompanyInfoViewController = storyBoard.instantiateViewController(identifier: "companyInfoVC")
+        companyInfoVC.companyInfo = getCompanyData(index: indexPath.row)
+        companyInfoVC.companyInfoDelegate = self
+        self.navigationController?.pushViewController(companyInfoVC, animated: true)
+    }
 }
 
 extension CompanyViewController: CompanyListDelegate {
     func didCompanyListUpdate(data: [CompanyInfo]) {
-        self.actualCompanyResponse = data
+        companyResponse = data
         reloadAndShowTableView()
+        DataManager.shared.setCompanyResponse(response: data)
     }
     
     func onCompanyListError(error: Error?) {
-        self.actualCompanyResponse = []
+        companyResponse = []
         reloadAndShowTableView()
+        DataManager.shared.setCompanyResponse(response: [])
     }
 }
 
@@ -154,14 +173,28 @@ extension CompanyViewController: SortDelegate {
     func selectedSort(sortIndex: Int) {
         sortedType = sortIndex
         if sortIndex == 0 {
-            companyResponse = actualCompanyResponse
+            companyResponse = DataManager.shared.actualCompanyResponse
         } else if sortIndex == 1 {
             companyResponse.sort(by: {$0.company < $1.company})
         } else {
             companyResponse.sort(by: {$0.company > $1.company})
         }
         
-         self.companyTableView.reloadData()
+        self.companyTableView.reloadData()
     }
+}
+
+extension CompanyViewController: CompanyInfoUpdateDelegate {
+    func didUpdateCompanyFavorite(isFavorite: Bool, companyId: String) {
+        DataManager.shared.updateFavorite(isFavorite: isFavorite, companyId: companyId)
+        self.companyTableView.reloadData()
+    }
+    
+    func didUpdateCompanyFollow(isFollow: Bool, companyId: String) {
+        DataManager.shared.updateFollowingList(isFollow: isFollow, companyId: companyId)
+        self.companyTableView.reloadData()
+    }
+    
+    
 }
 

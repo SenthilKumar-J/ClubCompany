@@ -3,7 +3,7 @@
 //  ClubCompanyTests
 //
 //  Created by Senthil Kumar J on 04/01/20.
-//  Copyright © 2020 Nagravision. All rights reserved.
+//  Copyright © 2020 Senthil Kumar J. All rights reserved.
 //
 
 import XCTest

@@ -11,6 +11,9 @@
 		8D44D6BB23C0E04700E94463 /* CompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D44D6BA23C0E04700E94463 /* CompanyTableViewCell.swift */; };
 		8D44D6BD23C0FBE100E94463 /* CompanyFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D44D6BC23C0FBE100E94463 /* CompanyFilterViewController.swift */; };
 		8D44D6BF23C0FD7F00E94463 /* CompanySortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D44D6BE23C0FD7F00E94463 /* CompanySortTableViewCell.swift */; };
+		8D44D6C123C1004200E94463 /* CompanyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D44D6C023C1004200E94463 /* CompanyInfoViewController.swift */; };
+		8D44D6C323C101A300E94463 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D44D6C223C101A300E94463 /* CustomButton.swift */; };
+		8D44D6C623C1066F00E94463 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D44D6C523C1066F00E94463 /* DataManager.swift */; };
 		8D9372E123C0D5140000A47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9372E023C0D5140000A47E /* AppDelegate.swift */; };
 		8D9372E323C0D5140000A47E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9372E223C0D5140000A47E /* SceneDelegate.swift */; };
 		8D9372E523C0D5140000A47E /* CompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9372E423C0D5140000A47E /* CompanyViewController.swift */; };
@@ -47,6 +50,9 @@
 		8D44D6BA23C0E04700E94463 /* CompanyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTableViewCell.swift; sourceTree = "<group>"; };
 		8D44D6BC23C0FBE100E94463 /* CompanyFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyFilterViewController.swift; sourceTree = "<group>"; };
 		8D44D6BE23C0FD7F00E94463 /* CompanySortTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySortTableViewCell.swift; sourceTree = "<group>"; };
+		8D44D6C023C1004200E94463 /* CompanyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoViewController.swift; sourceTree = "<group>"; };
+		8D44D6C223C101A300E94463 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		8D44D6C523C1066F00E94463 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		8D9372DD23C0D5140000A47E /* ClubCompany.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClubCompany.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D9372E023C0D5140000A47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D9372E223C0D5140000A47E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +107,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		8D44D6C423C1066000E94463 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				8D44D6C523C1066F00E94463 /* DataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		8D9372D423C0D5140000A47E = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +138,7 @@
 		8D9372DF23C0D5140000A47E /* ClubCompany */ = {
 			isa = PBXGroup;
 			children = (
+				8D44D6C423C1066000E94463 /* DataManager */,
 				8D44D6B923C0E02D00E94463 /* Cells */,
 				8D93731923C0DB9C0000A47E /* Models */,
 				8D93731623C0DB520000A47E /* NetworkManager */,
@@ -138,6 +153,8 @@
 				8D9372EE23C0D5160000A47E /* Info.plist */,
 				8D44D6B723C0DEE500E94463 /* MembersViewController.swift */,
 				8D44D6BC23C0FBE100E94463 /* CompanyFilterViewController.swift */,
+				8D44D6C023C1004200E94463 /* CompanyInfoViewController.swift */,
+				8D44D6C223C101A300E94463 /* CustomButton.swift */,
 			);
 			path = ClubCompany;
 			sourceTree = "<group>";
@@ -254,9 +271,10 @@
 		8D9372D523C0D5140000A47E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = "";
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = Nagravision;
+				ORGANIZATIONNAME = "Senthil Kumar J";
 				TargetAttributes = {
 					8D9372DC23C0D5140000A47E = {
 						CreatedOnToolsVersion = 11.3;
@@ -323,10 +341,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D44D6C323C101A300E94463 /* CustomButton.swift in Sources */,
 				8D44D6BD23C0FBE100E94463 /* CompanyFilterViewController.swift in Sources */,
 				8D44D6B823C0DEE500E94463 /* MembersViewController.swift in Sources */,
+				8D44D6C623C1066F00E94463 /* DataManager.swift in Sources */,
 				8D9372E523C0D5140000A47E /* CompanyViewController.swift in Sources */,
 				8D9372E123C0D5140000A47E /* AppDelegate.swift in Sources */,
+				8D44D6C123C1004200E94463 /* CompanyInfoViewController.swift in Sources */,
 				8D9372E323C0D5140000A47E /* SceneDelegate.swift in Sources */,
 				8D93731223C0DAC10000A47E /* ConfigManager.swift in Sources */,
 				8D93731B23C0DBAF0000A47E /* ModelClass.swift in Sources */,
