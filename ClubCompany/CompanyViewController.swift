@@ -106,7 +106,6 @@ class CompanyViewController: UIViewController {
         filterVC.selectedSort = sortedType
         navigationController?.present(filterVC, animated: true, completion: nil)
     }
-
 }
 
 //MARK:- Extensions
@@ -143,6 +142,7 @@ extension CompanyViewController: UITableViewDelegate, UITableViewDataSource {
         let companyInfoVC: CompanyInfoViewController = storyBoard.instantiateViewController(identifier: "companyInfoVC")
         companyInfoVC.companyInfo = getCompanyData(index: indexPath.row)
         companyInfoVC.companyInfoDelegate = self
+        companyInfoVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(companyInfoVC, animated: true)
     }
 }

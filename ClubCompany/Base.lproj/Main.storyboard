@@ -34,7 +34,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="X53-zP-Zeh">
-                                                    <rect key="frame" x="71" y="10" width="63" height="20.5"/>
+                                                    <rect key="frame" x="71" y="10" width="58" height="20.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAa-Rs-VQN">
                                                             <rect key="frame" x="0.0" y="0.0" width="23" height="20.5"/>
@@ -43,9 +43,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Eqa-6g-K0L">
-                                                            <rect key="frame" x="43" y="0.0" width="20" height="20.5"/>
+                                                            <rect key="frame" x="43" y="0.0" width="15" height="20.5"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="20" id="taa-Lg-1ba"/>
+                                                                <constraint firstAttribute="width" constant="15" id="taa-Lg-1ba"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
@@ -209,7 +209,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Hf2-co-nP4">
-                                                    <rect key="frame" x="333" y="17" width="25" height="66"/>
+                                                    <rect key="frame" x="349" y="17" width="25" height="66"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGk-uf-cEK">
                                                             <rect key="frame" x="0.0" y="0.0" width="25" height="24"/>
@@ -233,7 +233,7 @@
                                             <constraints>
                                                 <constraint firstItem="7OG-gI-YMf" firstAttribute="top" secondItem="CUd-GY-suS" secondAttribute="top" constant="10" id="NLj-TT-B1u"/>
                                                 <constraint firstItem="Hf2-co-nP4" firstAttribute="centerY" secondItem="CUd-GY-suS" secondAttribute="centerY" id="abD-tk-5TR"/>
-                                                <constraint firstAttribute="trailing" secondItem="Hf2-co-nP4" secondAttribute="trailing" constant="56" id="alc-JX-zFG"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hf2-co-nP4" secondAttribute="trailing" constant="40" id="alc-JX-zFG"/>
                                                 <constraint firstAttribute="bottom" secondItem="7OG-gI-YMf" secondAttribute="bottom" constant="10" id="bso-jx-MBg"/>
                                                 <constraint firstItem="7OG-gI-YMf" firstAttribute="leading" secondItem="CUd-GY-suS" secondAttribute="leadingMargin" id="cEg-hk-efa"/>
                                             </constraints>
@@ -505,7 +505,7 @@
                                     <constraint firstItem="hIl-FH-G1w" firstAttribute="leading" secondItem="7q4-KP-r0s" secondAttribute="leading" constant="20" id="bqd-qL-Mme"/>
                                     <constraint firstItem="BoI-NK-tDI" firstAttribute="leading" secondItem="7q4-KP-r0s" secondAttribute="leading" constant="20" id="hHI-JZ-s1Q"/>
                                     <constraint firstItem="hIl-FH-G1w" firstAttribute="top" secondItem="WLi-1p-NKx" secondAttribute="bottom" constant="20" id="hkY-ig-JjQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="hIl-FH-G1w" secondAttribute="bottom" constant="20" id="xAS-Bl-HUZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="hIl-FH-G1w" secondAttribute="bottom" constant="20" id="ifW-un-gyg"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SxI-ld-gky" customClass="CustomButton" customModule="ClubCompany" customModuleProvider="target">

@@ -31,9 +31,6 @@ class NetworkRequestManager {
     func executeRequest(request: URLRequest, completion: @escaping completionHandler) {
         //create the session object
         let session = URLSession.shared
-        
-        print("NetworkRequestManager | URL:", request.url?.absoluteString ?? "")
-        
         //create dataTask using the session object to send data to the server
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             completion(data, response, error)

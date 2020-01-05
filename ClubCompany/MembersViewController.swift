@@ -167,11 +167,13 @@ extension MembersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:MembersTableViewCell = tableView.dequeueReusableCell(withIdentifier: "memberCell", for: indexPath) as! MembersTableViewCell
         let member = getMemberData(index: indexPath.row)
-        var name = member.name?.first ?? ""
-        name = name + " " + (member.name?.last ?? "")
+        if let memberName = member.name {
+            cell.name.text = memberName.first + " " + memberName.last
+        } else {
+            cell.name.text = ""
+        }
         let age:Int = member.age != nil ? member.age! : 0
         let ageInString: String = age != 0 ? String(age) : ""
-        cell.name.text = name
         cell.age.text = ageInString + " " + "years old"
         if partOfOneCompany {
             cell.company.isHidden = true
@@ -179,6 +181,10 @@ extension MembersViewController: UITableViewDelegate, UITableViewDataSource {
             cell.company.text = companyName
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
