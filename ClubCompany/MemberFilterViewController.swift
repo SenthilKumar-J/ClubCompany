@@ -55,7 +55,6 @@ class MemberFilterViewController: UIViewController {
         cancelButtonOutlet.setTitle("Cancel", for: .normal)
     }
     
-
     @IBAction func applySortAction(_ sender: Any) {
         sortDelegate?.didUpdateSort(sortBy: sortOrderSegment.selectedSegmentIndex, sortType: sortByNameAgeSegment.selectedSegmentIndex)
         self.dismiss(animated: true, completion: nil)

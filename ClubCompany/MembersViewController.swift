@@ -122,7 +122,37 @@ class MembersViewController: UIViewController {
             }
         }
     }
-
+    
+    @IBAction func phoneMemberAction(_ sender: UIButton) {
+        if let member = getMemberFromSender(sender: sender) {
+            if let phoneNumber = member.phone {
+                let correctedPhone = phoneNumber.replacingOccurrences(of: " ", with: "")
+                if let phoneCallURL: URL = URL(string: "tel://" + correctedPhone) {
+                    if (UIApplication.shared.canOpenURL(phoneCallURL)) {
+                        UIApplication.shared.open(phoneCallURL, options: [:], completionHandler: nil)
+                    }
+                }
+            }
+        }
+    }
+    
+    @IBAction func mailMemberAction(_ sender: UIButton) {
+        if let member = getMemberFromSender(sender: sender) {
+            if let emailAddress = member.email {
+                if let emailURL: URL = URL(string: "mailto:\(emailAddress)") {
+                    if (UIApplication.shared.canOpenURL(emailURL)) {
+                        UIApplication.shared.open(emailURL, options: [:], completionHandler: nil)
+                    }
+                }
+            }
+        }
+    }
+    
+    internal func getMemberFromSender(sender: UIButton) -> Member? {
+        guard let membersCell = (sender.superview?.superview?.superview as? MembersTableViewCell) else { return nil }
+        guard let indexPath = membersTableView.indexPath(for: membersCell) else { return nil }
+        return getMemberData(index: indexPath.row)
+    }
 }
 
 extension MembersViewController: UITableViewDelegate, UITableViewDataSource {

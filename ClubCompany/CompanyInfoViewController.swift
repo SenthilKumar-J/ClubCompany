@@ -86,7 +86,10 @@ class CompanyInfoViewController: UIViewController {
     }
     
     @IBAction func visitWebsiteAction(_ sender: Any) {
-        if let websiteURL = companyInfo?.website {
+        if var websiteURL = companyInfo?.website {
+            if !(websiteURL.hasPrefix("http") || websiteURL.hasPrefix("https")) {
+                websiteURL = "http://" + websiteURL
+            }
             if let url = URL(string: websiteURL) {
                 UIApplication.shared.open(url)
             }
@@ -101,5 +104,4 @@ class CompanyInfoViewController: UIViewController {
         membersVC.partOfOneCompany = true
         self.navigationController?.pushViewController(membersVC, animated: true)
     }
-
 }
