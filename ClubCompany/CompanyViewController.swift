@@ -198,7 +198,5 @@ extension CompanyViewController: CompanyInfoUpdateDelegate {
         DataManager.shared.updateFollowingList(isFollow: isFollow, companyId: companyId)
         self.companyTableView.reloadData()
     }
-    
-    
 }
 

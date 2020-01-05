@@ -53,6 +53,19 @@ class MemberFilterViewController: UIViewController {
         applyButtonOutlet.setTitle("Apply", for: .normal)
         cancelButtonOutlet.setShadow()
         cancelButtonOutlet.setTitle("Cancel", for: .normal)
+        setupButtonOutlets()
+    }
+    
+    func setupButtonOutlets() {
+        applyButtonOutlet.backgroundColor = .systemBlue
+        applyButtonOutlet.setTitle("Apply", for: .normal)
+        applyButtonOutlet.setTitle("Apply", for: .highlighted)
+        applyButtonOutlet.setTitleColor(.white, for: .normal)
+        
+        cancelButtonOutlet.backgroundColor = .systemBlue
+        cancelButtonOutlet.setTitle("Cancel", for: .normal)
+        cancelButtonOutlet.setTitle("Cancel", for: .highlighted)
+        cancelButtonOutlet.setTitleColor(.white, for: .normal)
     }
     
     @IBAction func applySortAction(_ sender: Any) {

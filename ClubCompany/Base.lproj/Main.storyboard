@@ -325,7 +325,7 @@
                                         </constraints>
                                     </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pdu-kZ-iQp">
-                                        <rect key="frame" x="60" y="171" width="294" height="32"/>
+                                        <rect key="frame" x="60" y="161" width="294" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="66l-7E-RMg"/>
                                         </constraints>
@@ -370,7 +370,7 @@
                                     <constraint firstItem="eMY-VU-0Fo" firstAttribute="top" secondItem="r0f-GH-sv2" secondAttribute="bottom" id="5se-oi-9pM"/>
                                     <constraint firstItem="k1P-tN-N9q" firstAttribute="leading" secondItem="IRq-V8-PjM" secondAttribute="leading" constant="40" id="6TS-U4-9QK"/>
                                     <constraint firstAttribute="trailing" secondItem="k1P-tN-N9q" secondAttribute="trailing" constant="40" id="7jw-ZZ-5dc"/>
-                                    <constraint firstItem="pdu-kZ-iQp" firstAttribute="top" secondItem="e2H-Em-4Cm" secondAttribute="bottom" constant="40" id="GDg-Gy-LtX"/>
+                                    <constraint firstItem="pdu-kZ-iQp" firstAttribute="top" secondItem="e2H-Em-4Cm" secondAttribute="bottom" constant="30" id="GDg-Gy-LtX"/>
                                     <constraint firstAttribute="trailing" secondItem="eMY-VU-0Fo" secondAttribute="trailing" constant="20" id="GR2-hL-Egb"/>
                                     <constraint firstAttribute="bottom" secondItem="k1P-tN-N9q" secondAttribute="bottom" constant="40" id="W4L-HA-aP3"/>
                                     <constraint firstItem="eMY-VU-0Fo" firstAttribute="leading" secondItem="IRq-V8-PjM" secondAttribute="leading" constant="20" id="WNn-DQ-eVh"/>

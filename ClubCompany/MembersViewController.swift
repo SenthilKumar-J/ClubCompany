@@ -218,7 +218,7 @@ extension MembersViewController: UITableViewDelegate, UITableViewDataSource {
         let action = UIContextualAction(style: .normal, title: title) { (UIContextualAction, view, completionHandler: (Bool) -> Void) in
             if member.id != nil {
                 DataManager.shared.udpateMemberFavorite(isFavorite: !isFavorite,memberId: member.id!)
-                self.membersTableView.reloadRows(at: [indexPath], with: .automatic)
+                self.membersTableView.reloadRows(at: [indexPath], with: .none)
             }
             completionHandler(true)
         }
