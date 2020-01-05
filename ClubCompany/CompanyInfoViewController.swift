@@ -94,11 +94,12 @@ class CompanyInfoViewController: UIViewController {
     }
     
     @IBAction func membersAction(_ sender: Any) {
-//        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//        let membersVC: MembersViewController = storyBoard.instantiateViewController(identifier: "membersVC")
-//        membersVC.members = companyInfo?.members ?? []
-//        membersVC.companyName = companyInfo?.company ?? ""
-//        self.navigationController?.pushViewController(membersVC, animated: true)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let membersVC: MembersViewController = storyBoard.instantiateViewController(identifier: "membersVC")
+        membersVC.members = companyInfo?.members ?? []
+        membersVC.companyName = companyInfo?.company ?? ""
+        membersVC.partOfOneCompany = true
+        self.navigationController?.pushViewController(membersVC, animated: true)
     }
 
 }

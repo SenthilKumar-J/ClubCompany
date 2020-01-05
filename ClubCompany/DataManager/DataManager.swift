@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol MembersData: AnyObject {
+    func didReceiveMembersData()
+}
+
 public class DataManager: NSObject {
     public static let shared = DataManager()
     private override init() {}
@@ -15,9 +19,22 @@ public class DataManager: NSObject {
     var favoriteIds: [String] = []
     var followingIds: [String] = []
     var actualCompanyResponse: [CompanyInfo] = []
+    var allMembers: [Member] = []
+    var memberfavoriteIds: [String] = []
+    weak var membersDataDelegate: MembersData?
     
     func setCompanyResponse(response: [CompanyInfo]) {
         actualCompanyResponse = response
+        for eachCompany in actualCompanyResponse {
+            if let companyMembers = eachCompany.members {
+                allMembers = allMembers + companyMembers
+            }
+        }
+        membersDataDelegate?.didReceiveMembersData()
+    }
+    
+    func getAllMembers() -> [Member] {
+        return allMembers
     }
     
     func updateFavorite(isFavorite: Bool, companyId: String) {
@@ -50,5 +67,21 @@ public class DataManager: NSObject {
     
     func isFollowing(companyId: String) -> Bool {
         return followingIds.contains(companyId)
+    }
+    
+    func isMemberFavorite(memberId: String) -> Bool {
+        return memberfavoriteIds.contains(memberId)
+    }
+    
+    func udpateMemberFavorite(isFavorite: Bool, memberId: String) {
+        if isFavorite {
+            if !(memberfavoriteIds.contains(memberId)) {
+                memberfavoriteIds.append(memberId)
+            }
+        } else {
+            if let index = memberfavoriteIds.firstIndex(of: memberId) {
+                memberfavoriteIds.remove(at: index)
+            }
+        }
     }
 }

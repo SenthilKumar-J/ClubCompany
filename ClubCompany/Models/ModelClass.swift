@@ -14,11 +14,27 @@ public struct Member: Codable {
     let name: PersonName?
     let email: String?
     let phone: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case age
+        case name
+        case email
+        case phone
+    }
 }
 
 public struct PersonName: Codable {
-    let first: String?
-    let last: String?
+    var first: String { return _first ?? "" }
+    var last: String { return _last ?? "" }
+    
+    private var _first: String?
+    private var _last: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case _first = "first"
+        case _last = "last"
+    }
 }
 
 public struct CompanyInfo: Codable {

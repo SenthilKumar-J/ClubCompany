@@ -14,6 +14,8 @@
 		8D44D6C123C1004200E94463 /* CompanyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D44D6C023C1004200E94463 /* CompanyInfoViewController.swift */; };
 		8D44D6C323C101A300E94463 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D44D6C223C101A300E94463 /* CustomButton.swift */; };
 		8D44D6C623C1066F00E94463 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D44D6C523C1066F00E94463 /* DataManager.swift */; };
+		8D44D6C823C11C7F00E94463 /* MembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D44D6C723C11C7F00E94463 /* MembersTableViewCell.swift */; };
+		8D81681B23C1CAB900599660 /* MemberFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81681A23C1CAB900599660 /* MemberFilterViewController.swift */; };
 		8D9372E123C0D5140000A47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9372E023C0D5140000A47E /* AppDelegate.swift */; };
 		8D9372E323C0D5140000A47E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9372E223C0D5140000A47E /* SceneDelegate.swift */; };
 		8D9372E523C0D5140000A47E /* CompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9372E423C0D5140000A47E /* CompanyViewController.swift */; };
@@ -53,6 +55,8 @@
 		8D44D6C023C1004200E94463 /* CompanyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoViewController.swift; sourceTree = "<group>"; };
 		8D44D6C223C101A300E94463 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		8D44D6C523C1066F00E94463 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		8D44D6C723C11C7F00E94463 /* MembersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersTableViewCell.swift; sourceTree = "<group>"; };
+		8D81681A23C1CAB900599660 /* MemberFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberFilterViewController.swift; sourceTree = "<group>"; };
 		8D9372DD23C0D5140000A47E /* ClubCompany.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClubCompany.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D9372E023C0D5140000A47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D9372E223C0D5140000A47E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 			children = (
 				8D44D6BA23C0E04700E94463 /* CompanyTableViewCell.swift */,
 				8D44D6BE23C0FD7F00E94463 /* CompanySortTableViewCell.swift */,
+				8D44D6C723C11C7F00E94463 /* MembersTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 				8D44D6BC23C0FBE100E94463 /* CompanyFilterViewController.swift */,
 				8D44D6C023C1004200E94463 /* CompanyInfoViewController.swift */,
 				8D44D6C223C101A300E94463 /* CustomButton.swift */,
+				8D81681A23C1CAB900599660 /* MemberFilterViewController.swift */,
 			);
 			path = ClubCompany;
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D81681B23C1CAB900599660 /* MemberFilterViewController.swift in Sources */,
 				8D44D6C323C101A300E94463 /* CustomButton.swift in Sources */,
 				8D44D6BD23C0FBE100E94463 /* CompanyFilterViewController.swift in Sources */,
 				8D44D6B823C0DEE500E94463 /* MembersViewController.swift in Sources */,
@@ -353,6 +360,7 @@
 				8D93731B23C0DBAF0000A47E /* ModelClass.swift in Sources */,
 				8D93731823C0DB600000A47E /* NetworkRequestManager.swift in Sources */,
 				8D44D6BB23C0E04700E94463 /* CompanyTableViewCell.swift in Sources */,
+				8D44D6C823C11C7F00E94463 /* MembersTableViewCell.swift in Sources */,
 				8D44D6BF23C0FD7F00E94463 /* CompanySortTableViewCell.swift in Sources */,
 				8D93731523C0DB040000A47E /* CompanyListManager.swift in Sources */,
 			);

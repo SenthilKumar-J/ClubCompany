@@ -47,7 +47,6 @@ class CompanyViewController: UIViewController {
         setupActivityIndicator()
         companyTableView.isHidden = true
         CompanyListManager().getCompanyList(callBack: self)
-        reloadAndShowTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -150,6 +149,7 @@ extension CompanyViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension CompanyViewController: CompanyListDelegate {
     func didCompanyListUpdate(data: [CompanyInfo]) {
+        print("Received Company Data update")
         companyResponse = data
         reloadAndShowTableView()
         DataManager.shared.setCompanyResponse(response: data)
