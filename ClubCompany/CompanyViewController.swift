@@ -42,8 +42,6 @@ class CompanyViewController: UIViewController {
         // Do any additional setup after loading the view.
         navigationItem.title = "Company"
         navigationController?.navigationBar.prefersLargeTitles = true
-        let rightButton = UIBarButtonItem(image: UIImage(named: "sort"), style: .plain, target: self, action: #selector(onFilterClicked))
-        navigationItem.rightBarButtonItem = rightButton
         setupActivityIndicator()
         companyTableView.isHidden = true
         CompanyListManager().getCompanyList(callBack: self)
@@ -73,7 +71,13 @@ class CompanyViewController: UIViewController {
             self.companyTableView.reloadData()
             self.companyTableView.isHidden = false
             self.setupSearchBar()
+            self.setupNavigationRightBarButton()
         }
+    }
+    
+    func setupNavigationRightBarButton() {
+        let rightButton = UIBarButtonItem(image: UIImage(named: "sort"), style: .plain, target: self, action: #selector(onFilterClicked))
+        navigationItem.rightBarButtonItem = rightButton
     }
     
     func setupSearchBar() {

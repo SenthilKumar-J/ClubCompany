@@ -24,6 +24,7 @@ class CompanyFilterViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         view.backgroundColor = .clear
+        sortTableView.backgroundColor = .white
         sortTableView.delegate = self
         sortTableView.dataSource = self
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTouch))
