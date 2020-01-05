@@ -14,6 +14,7 @@ public struct Member: Codable {
     let name: PersonName?
     let email: String?
     let phone: String?
+    var companyName: String?
     
     enum CodingKeys: String, CodingKey {
         case id = "_id"

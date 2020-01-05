@@ -174,11 +174,16 @@ extension MembersViewController: UITableViewDelegate, UITableViewDataSource {
         }
         let age:Int = member.age != nil ? member.age! : 0
         let ageInString: String = age != 0 ? String(age) : ""
-        cell.age.text = ageInString + " " + "years old"
+        cell.age.text = "Age:" + " " + ageInString + " " + "years"
         if partOfOneCompany {
             cell.company.isHidden = true
         } else {
-            cell.company.text = companyName
+            cell.company.text = "Company:" + " " + (member.companyName ?? "")
+        }
+        if DataManager.shared.isMemberFavorite(memberId: member.id ?? "") {
+            cell.favoriteImage.isHidden = false
+        } else {
+            cell.favoriteImage.isHidden = true
         }
         return cell
     }
@@ -188,7 +193,11 @@ extension MembersViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        if partOfOneCompany {
+            return 100
+        } else {
+            return 110
+        }
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -206,9 +215,10 @@ extension MembersViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             title = "Set " + title
         }
-        let action = UIContextualAction(style: .normal, title: title) { (UIContextualAction, UIView, completionHandler: (Bool) -> Void) in
+        let action = UIContextualAction(style: .normal, title: title) { (UIContextualAction, view, completionHandler: (Bool) -> Void) in
             if member.id != nil {
                 DataManager.shared.udpateMemberFavorite(isFavorite: !isFavorite,memberId: member.id!)
+                self.membersTableView.reloadRows(at: [indexPath], with: .automatic)
             }
             completionHandler(true)
         }

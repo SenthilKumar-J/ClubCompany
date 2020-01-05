@@ -27,7 +27,12 @@ public class DataManager: NSObject {
         actualCompanyResponse = response
         for eachCompany in actualCompanyResponse {
             if let companyMembers = eachCompany.members {
-                allMembers = allMembers + companyMembers
+                var computedMembers: [Member] = []
+                for var eachCompanyMember in companyMembers {
+                    eachCompanyMember.companyName = eachCompany.company
+                    computedMembers.append(eachCompanyMember)
+                }
+                allMembers = allMembers + computedMembers
             }
         }
         membersDataDelegate?.didReceiveMembersData()
